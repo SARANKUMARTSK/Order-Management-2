@@ -5,6 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-scroll';
 import Icon from './Icon';
 
+
 function Topbar() {
   return <>
   <div className='top_bar'>
@@ -22,7 +23,7 @@ function Topbar() {
               <Link to='/about'>About</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <Link to='/reviews'>Reviews</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <Link to='/contact'>Contact</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <Link to='/login'>Login</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <Link to='/dashboard'>Login</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
           </Nav>
         </Navbar.Collapse>

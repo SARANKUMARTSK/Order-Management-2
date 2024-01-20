@@ -3,7 +3,7 @@ import Icon from './Icon'
 
 function Login() {
   return <>
-  <div className='login_page'>
+  {/* <div className='login_page'>
     <div className='login_image_container'>
         <img className='login_image' src="https://media.freshbooks.com/wp-content/uploads/2021/11/order-management.jpg" alt="" />
     </div>
@@ -19,7 +19,8 @@ function Login() {
 
       </div>
     </div>
-  </div>
+  </div> */}
+  
   </>
 }
 
