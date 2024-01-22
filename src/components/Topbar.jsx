@@ -4,9 +4,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-scroll';
 import Icon from './Icon';
-
+import { useNavigate } from 'react-router-dom';
 
 function Topbar() {
+  let navigate = useNavigate()
+  let handleStart=()=>{
+    navigate("/dashboard")
+  }
   return <>
   <div className='top_bar'>
   <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
@@ -23,7 +27,7 @@ function Topbar() {
               <Link to='/about'>About</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <Link to='/reviews'>Reviews</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <Link to='/contact'>Contact</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <Link to='/dashboard'>Login</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <Link to='/dashboard' onClick={()=>{handleStart()}}>Login</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
           </Nav>
         </Navbar.Collapse>

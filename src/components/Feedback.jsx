@@ -26,7 +26,10 @@ function Feedback() {
   let [name,setName] = useState("")
   let [command,setCommand] = useState("")
   const handleSubmit=()=>{
-    let newArray = [...testimonial]
+    if(!name||!command){
+        alert("Please Fill All The Fields")
+    }else{
+      let newArray = [...testimonial]
     newArray.push({
         name : name ,
         command : command 
@@ -35,6 +38,10 @@ function Feedback() {
     alert("Thank You For Your Valuable Command")
     setName("");
     setCommand("");
+
+    }
+    
+    
   }
   return <>
   <div className='testimonial_container'>

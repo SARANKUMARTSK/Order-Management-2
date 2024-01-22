@@ -18,7 +18,7 @@ function Home() {
       <p>Manage sales and purchase orders, create packages and shipments, and send delivery updates through a single order management system.
       </p> <p>Dedicate more time to growing your orders than managing them.</p>
       <button onClick={()=>{handleStart()}} className='getStarted_button'>Get Started</button>&nbsp;&nbsp;&nbsp;
-      <button className='learn_button'>Learn More</button>
+      {/* <button className='learn_button'>Learn More</button> */}
   </div>
   </Link>
   
