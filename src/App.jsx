@@ -8,6 +8,8 @@ import Dashboard from './components/Dashboard/Dashboard'
 import Orders from './components/Dashboard/Orders'
 import Sidebar from './components/Dashboard/Sidebar'
 import Customers from './components/Dashboard/Customers'
+import AddCustomer from './components/Dashboard/AddCustomer'
+import AddOrders from './components/Dashboard/AddOrders'
 
 function App() {
   return <>
@@ -17,6 +19,8 @@ function App() {
     <Route path='/dashboard' element={<Dashboard/>}/>
     <Route path='/order' element={<Orders/>}></Route>
     <Route path='/customer' element={<Customers/>}></Route>
+    <Route path='/add-customer' element={<AddCustomer/>}/>
+    <Route path='/add-order' element={<AddOrders/>}/>
     <Route path='*' element={<Navigate to='home'/>} ></Route>
     
   </Routes>
