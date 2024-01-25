@@ -10,6 +10,7 @@ import Sidebar from './components/Dashboard/Sidebar'
 import Customers from './components/Dashboard/Customers'
 import AddCustomer from './components/Dashboard/AddCustomer'
 import AddOrders from './components/Dashboard/AddOrders'
+import Settings from './components/Dashboard/Settings'
 
 function App() {
   return <>
@@ -21,6 +22,7 @@ function App() {
     <Route path='/customer' element={<Customers/>}></Route>
     <Route path='/add-customer' element={<AddCustomer/>}/>
     <Route path='/add-order' element={<AddOrders/>}/>
+    <Route path='settings' element={<Settings />} />
     <Route path='*' element={<Navigate to='home'/>} ></Route>
     
   </Routes>

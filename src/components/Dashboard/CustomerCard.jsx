@@ -27,7 +27,8 @@ function CustomerCard() {
                
                             <Card.Img variant="top" src={e.customerImage}/>
                             <Card.Body >
-                                <Card.Title><span style={{fontWeight:"bold"}}>Name :</span>  {e.customerName}</Card.Title>
+                                <Card.Title><span style={{fontWeight:"bold"}}>Supplier Name :</span>  {e.supplierName}</Card.Title>
+                                <Card.Title><span style={{fontWeight:"bold"}}>Custer Name :</span>  {e.customerName}</Card.Title>
                                 <Card.Text><span style={{fontWeight:"bold"}}>ID :</span> {e.customerId} </Card.Text>
                                 <Card.Text><span style={{fontWeight:"bold"}}>Contact :</span> {e.customerContact} </Card.Text>
                                 <Card.Text><span style={{fontWeight:"bold"}}>Address :</span> {e.customerAddress} </Card.Text>

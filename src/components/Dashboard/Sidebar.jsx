@@ -37,7 +37,7 @@ function Sidebar() {
                             <i className="fas fa-fw fa-user"></i>
                             <span>Customers</span></div>
                     </Link>
-                    <Link to="/order" className="nav-item active" style={{textDecoration:"none"}}>
+                    <Link to="/settings" className="nav-item active" style={{textDecoration:"none"}}>
                         <div className="nav-link" >
                             <i className="fas fa-fw fa-gear"></i>
                             <span>Settings</span></div>

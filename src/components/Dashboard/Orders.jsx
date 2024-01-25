@@ -22,18 +22,35 @@ function Orders() {
 
   return <>
   <Link to="/order" style={{textDecoration:"none"}}>
+    <div style={{boxShadow:"2px 2px 5px green" , width:"100%"}}>
+       <h1 style={{color:"darkgreen" , fontFamily:"fantasy" , textAlign:'center' , textShadow:"1px 1px 1px black"}}> Orders</h1>
+        <select style={{borderRadius:"10px" , width:"250px", height:"30px", margin:"10px"}}>
+        <option value="">All</option>
+          <option value="">Sales Order</option>
+          <option value="">Purchase Order</option>
+          <option value="">Packed</option>
+          <option value="">Shipped</option>
+          <option value="">Delivered</option>
+          <option value="">Return</option>
+          <option value="">Cancelled</option>
+        </select>
+        <Link style={{padding:"20px"}} to="/home"><Button variant="warning">Go To Home </Button></Link>
+        <Link style={{padding:"20px"}} to="/dashboard"><Button variant="success">Go To Dashboard </Button></Link>
+        <Link style={{padding:"20px"}} to="/add-order"><Button variant="info">Add Orders</Button></Link>
+     </div>
+    
      <Table striped bordered hover>
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Customer ID</th>
-          <th>Customer Name</th>
-          <th>Product ID</th>
-          <th>Product Name</th>
-          <th>Product Price</th>
-          <th>Order Number</th>
-          <th>Customer Contact</th>
-          <th>Status</th>
+          <th style={{color:"white" , backgroundColor:"orangered",textShadow:"1px 2px 2px black", textAlign:"center"}}>ID</th>
+          <th style={{color:"white" , backgroundColor:"orangered",textShadow:"1px 2px 2px black", textAlign:"center"}}>Customer ID</th>
+          <th style={{color:"white" , backgroundColor:"orangered",textShadow:"1px 2px 2px black", textAlign:"center"}}>Customer Name</th>
+          <th style={{color:"white" , backgroundColor:"orangered",textShadow:"1px 2px 2px black", textAlign:"center"}}>Product ID</th>
+          <th style={{color:"white" , backgroundColor:"orangered",textShadow:"1px 2px 2px black", textAlign:"center"}}>Product Name</th>
+          <th style={{color:"white" , backgroundColor:"orangered",textShadow:"1px 2px 2px black", textAlign:"center"}}>Product Price</th>
+          <th style={{color:"white" , backgroundColor:"orangered",textShadow:"1px 2px 2px black", textAlign:"center"}}>Order Number</th>
+          <th style={{color:"white" , backgroundColor:"orangered",textShadow:"1px 2px 2px black", textAlign:"center"}}>Customer Contact</th>
+          <th style={{color:"white" , backgroundColor:"orangered",textShadow:"1px 2px 2px black", textAlign:"center"}}>Status</th>
         </tr>
       </thead>
       <tbody>
@@ -56,8 +73,7 @@ function Orders() {
         
       </tbody>
     </Table>
-    <Link style={{padding:"20px"}} to="/home"><Button variant="warning">Go To Home </Button></Link>
-    <Link style={{padding:"20px"}} to="/dashboard"><Button variant="success">Go To Dashboard </Button></Link>
+    
 
   </Link>
   </>

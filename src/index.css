@@ -212,3 +212,51 @@ font-weight: bolder;
   align-items: center;
   padding-left:60px ;
 }
+.customer_nav{
+  border:2px solid black;
+  background-color: antiquewhite;
+  text-align: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 1px 1px 5px black;
+}
+.customer_heading{
+  color: darkolivegreen;
+  text-shadow: 1px 1px 1px black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.customer_buttons{
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+.add-customer_nav{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: antiquewhite;
+  height: auto;
+  width: 100%;
+}
+.add-user_icon{
+  flex: 0.5;
+  font-size: 50px;
+  margin: 20px;
+  color: burlywood;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.add_customer_navigate{
+  flex: 0.5;
+}
+.add_customer_navigate>a>Button{
+  margin: 10px;
+}
+
+.addOrder_option{
+  background-color: antiquewhite;
+  border-radius: 5px;
+  padding: 5px;
+  color: darkslategrey;
+  font-weight: bolder;
+}

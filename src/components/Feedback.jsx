@@ -7,19 +7,19 @@ function Feedback() {
     [
         {
             name : "Mr.Robert De Niro",
-            command : "Thank you for putting together such a great product. We loved working with you and the whole team, and we will be recommending you to others!"
+            command : "Thank you for putting together such a great product."
         },
         {
             name : "James Stewart",
-            command : "he whole team was a huge help with putting things together for our company and brand. We will be hiring them again in the near future for additional work!"
+            command : "he whole team was a huge help with putting things together for our company and brand."
         },
         {
             name : "Marlon Brando",
-            command : "Thank you for putting together such a great product. We loved working with you and the whole team, and we will be recommending you to others!"
+            command : " We loved working with you and the whole team, and we will be recommending you to others!"
         },
         {
             name : "Toshirô Mifune",
-            command : "he whole team was a huge help with putting things together for our company and brand. We will be hiring them again in the near future for additional work!"
+            command : " We will be hiring them again in the near future for additional work!"
         }
     ]
   )
