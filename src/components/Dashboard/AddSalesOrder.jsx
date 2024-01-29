@@ -24,24 +24,31 @@ function AddSalesOrder() {
   let[paymentType,setPaymentType] = useState();
   let [status , setStatus] = useState();
  
-
+   
   let handleSubmit = async()=>{
-    let res = await axios.post(API_URL,{
-    customerName,
-    customerEmail,
-    customerPhone,
-    customerAddPhone,
-    customerAddress,
-    productName,
-    productDescription,
-    productPrice,
-    orderDate,
-    deliveryDate,
-    deliveryCharge,
-    paymentType,
-    status
-    })
-    navigate("/order")
+    if(!customerName||!customerEmail||!customerPhone||!customerAddPhone||!customerAddress||!productName||!productDescription||
+      !productPrice||!orderDate||!deliveryDate||!deliveryCharge||!paymentType||!status){
+        alert("Please Check & Fill All The Fields")
+      }
+      else{
+        let res = await axios.post(API_URL,{
+          customerName,
+          customerEmail,
+          customerPhone,
+          customerAddPhone,
+          customerAddress,
+          productName,
+          productDescription,
+          productPrice,
+          orderDate,
+          deliveryDate,
+          deliveryCharge,
+          paymentType,
+          status
+          })
+          navigate("/order")
+      }
+    
   }
   
   // useEffect(()=>{

@@ -8,7 +8,7 @@ function CustomerCard() {
     const [customer,setCustomer] = useState([])
     const getCustomer = async()=>{
         try{
-            let res = await axios.get("https://65a62c9d74cf4207b4ef648d.mockapi.io/Order");
+            let res = await axios.get("https://65a62c9d74cf4207b4ef648d.mockapi.io/order");
             setCustomer(res.data)
 
         }catch(error){
@@ -27,13 +27,14 @@ function CustomerCard() {
                
                             <Card.Img variant="top" src={e.customerImage}/>
                             <Card.Body >
-                                <Card.Title><span style={{fontWeight:"bold"}}>Supplier Name :</span>  {e.supplierName}</Card.Title>
                                 <Card.Title><span style={{fontWeight:"bold"}}>Custer Name :</span>  {e.customerName}</Card.Title>
                                 <Card.Text><span style={{fontWeight:"bold"}}>ID :</span> {e.customerId} </Card.Text>
-                                <Card.Text><span style={{fontWeight:"bold"}}>Contact :</span> {e.customerContact} </Card.Text>
+                                <Card.Text><span style={{fontWeight:"bold"}}>Email :</span> {e.customerEmail} </Card.Text>
+                                <Card.Text><span style={{fontWeight:"bold"}}>Phone Number :</span> {e.customerPhone} </Card.Text>
+                                <Card.Text><span style={{fontWeight:"bold"}}>Additional Phone Number :</span> {e.customerAddPhone} </Card.Text>
                                 <Card.Text><span style={{fontWeight:"bold"}}>Address :</span> {e.customerAddress} </Card.Text>
-                                <Button style={{textAlign:"center" , alignItems:"center"}} variant="warning">Edit</Button>&nbsp;&nbsp;
-                                <Button style={{textAlign:"center" , alignItems:"center"}} variant="danger">Delete</Button>
+                                {/* <Button style={{textAlign:"center" , alignItems:"center"}} variant="warning">Edit</Button>&nbsp;&nbsp;
+                                <Button style={{textAlign:"center" , alignItems:"center"}} variant="danger">Delete</Button> */}
                             </Card.Body>
                    </Card>
         })
