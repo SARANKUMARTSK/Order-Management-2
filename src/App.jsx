@@ -11,6 +11,9 @@ import Customers from './components/Dashboard/Customers'
 import AddCustomer from './components/Dashboard/AddCustomer'
 import AddOrders from './components/Dashboard/AddOrders'
 import Settings from './components/Dashboard/Settings'
+import AddSalesOrder from './components/Dashboard/AddSalesOrder'
+import AddPurchaseOrder from './components/Dashboard/AddPurchaseOrder'
+export const API_URL = "https://65a62c9d74cf4207b4ef648d.mockapi.io/order"
 
 function App() {
   return <>
@@ -21,7 +24,10 @@ function App() {
     <Route path='/order' element={<Orders/>}></Route>
     <Route path='/customer' element={<Customers/>}></Route>
     <Route path='/add-customer' element={<AddCustomer/>}/>
-    <Route path='/add-order' element={<AddOrders/>}/>
+    <Route path='/add-order' element={<AddOrders/>}>
+          <Route path='sales-order' element={<AddSalesOrder/>}></Route>
+          <Route path='purchase-order' element={<AddPurchaseOrder/>}></Route>
+    </Route>
     <Route path='settings' element={<Settings />} />
     <Route path='*' element={<Navigate to='home'/>} ></Route>
     

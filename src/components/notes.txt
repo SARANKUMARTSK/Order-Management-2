@@ -1,0 +1,99 @@
+let {id} = useParams();
+    let[name,setName]=useState('')
+    let[email,setEmail] = useState('')
+    let[username,setUsername] = useState('')
+    let[phone,setPhone]= useState('')
+    let[company,setCompany]=useState('')
+
+  useEffect(()=>{
+      let fetchUserDetails = async ()=>{
+      // console.log(id);
+      try{
+      let response = await axios.get(`${API_URL}/${id}`)
+      console.log(response.data);
+      let blogDetails = response.data;
+      setName(blogDetails.name);
+      setEmail(blogDetails.email);
+      setUsername(blogDetails.username);
+      setPhone(blogDetails.phone);
+      setCompany(blogDetails.company);
+      }
+      catch(error){
+        console.log(error);
+      }
+    };
+    fetchUserDetails();
+  },[id]);
+let navigate = useNavigate()
+  const handleUpdate = async ()=>{
+    try{
+      const updateData = {
+        name , 
+        email,
+        username,
+        phone ,
+        company
+      };
+      const response = await axios.put(`${API_URL}/${id}`,updateData);
+    }catch(error){
+      console.log(error);
+    }
+    navigate('/home')
+  };
+  value={company} onChange={(e)=>{setCompany(e.target.value)}}
+
+---------------------------------------------------------------------------------------------------------------------
+
+  let navigate = useNavigate()
+    let[name,setName]=useState('')
+    let[email,setEmail] = useState('')
+    let[username,setUsername] = useState('')
+    let[phone,setPhone]= useState('')
+    let[company,setCompany]=useState('')
+    const handleAdd=async()=>{
+     let res = await axios.post(API_URL,{
+        name , 
+        email,
+        username,
+        phone,
+        company
+     })
+     navigate('/home')
+    }
+    onChange={(e)=>{setCompany(e.target.value)}}
+    onClick={()=>{handleAdd()}}
+
+------------------------------------------------------------------------------------------------------------------------
+    let navigate = useNavigate()
+    let [user , setUser] = useState([])
+    const getUser = async()=>{
+        try{
+        let res = await axios.get('https://65a62c9d74cf4207b4ef648d.mockapi.io/user')
+        setUser(res.data)
+        }catch(error){
+            console.log(error);
+        }
+    }
+
+    useEffect(()=>{
+        getUser() 
+    },[])
+
+
+    const handleEdit=async(user)=>{
+        navigate(`/edit/${user.id}`);
+        let res = await axios.get(`${API_URL}/${user.id}`);
+        getBlogs();
+       }
+
+
+    const  handleDelete= async(user)=>{
+        try{
+         let res = await axios.delete(`${API_URL}/${user.id}`)
+         getUser();
+        }catch(error){
+          console.log(error);
+        }
+    }
+
+    ------------------------------------------------------------------------------------------------------------------

@@ -234,7 +234,7 @@ font-weight: bolder;
 .add-customer_nav{
   display: flex;
   flex-wrap: wrap;
-  background-color: antiquewhite;
+  background-color:lightslategrey;
   height: auto;
   width: 100%;
 }
@@ -260,3 +260,67 @@ font-weight: bolder;
   color: darkslategrey;
   font-weight: bolder;
 }
+
+.sales_order{
+  background-image: url("https://media.istockphoto.com/id/1340117122/photo/cube-with-shopping-trolley-symbol-on-the-laptop-keyboard.jpg?s=612x612&w=0&k=20&c=H9wHzhYHnZ8EjaM-Mp9ssQwoyjs1Ol1Imi7xy1b7J-M=");
+  background-size: cover;
+  font-weight: bolder;
+  text-shadow: 1px 1px 0px black;
+  font-size: 18px;
+}
+
+.deleteIcon{
+  font-size: 25px;
+  color: red;
+}
+.deleteIcon:hover{
+  transition: ease-in-out 200ms ;
+  transform: scale(1.2);
+}
+
+.editIcon{
+  font-size: 25px;
+  color: darkred;
+}
+.editIcon:hover{
+  transition: ease-in-out 200ms ;
+  transform: scale(1.2);
+}
+
+.addOrderButton{
+  border: 1px solid black;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  color: white;
+  background-color: orangered;
+  font-weight: bolder;
+  text-shadow: 1px 1px 2px black;
+  box-shadow: 1px 1px 5px black;
+}
+
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.addOrderButton:hover{
+ transform: scale(1.1);
+ transition: ease-in-out 300ms;
+ color: white;
+}
+.addOrderButton:nth-child(3){
+ background-color: chartreuse;
+ color: black;
+}
+.addOrderButton:nth-child(5){
+  background-color: chartreuse;
+  color: black;
+ }
+ .purchase_order{
+  background-image: url("https://www.sci400.com/wp-content/uploads/2014/09/purchasing.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-weight: bolder;
+ }
