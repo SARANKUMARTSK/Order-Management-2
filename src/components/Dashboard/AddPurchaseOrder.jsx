@@ -1,97 +1,132 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import { Button } from 'react-bootstrap';
+import Row from 'react-bootstrap/Row';
+import { Link, useParams } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import axios from 'axios';
+import { API_URL2 } from '../../App';
 import { useNavigate } from 'react-router-dom';
 
 function AddPurchaseOrder() {
-    let navigate = useNavigate()
+  let navigate = useNavigate()
   let [sellerName,setSellerName] = useState();
-  let [sellerCompny,setSellerCompny]=useState();
-  let [sellerEmail , setSellerEmail]=useState();
-  let [sellerPhone,setSellerPhone]=useState();
-  let [sellerAddPhone,setSellerAddPhone]=useState();
-  let [productName,setProductName]=useState();
-  let [productDescription,setProductDescription]=useState();
-  let [productPrice,setProductPrice]=useState();
-  let [orderDate,setOrderDate]=useState();
-  let [deliveryDate,setDeliveryDate]=useState();
-  let [paymentType,setPaymentType]=useState();
-
+  let [companyName,setCompanyName] = useState();
+  let [email,setEmail] = useState();
+  let [phoneNumber,setPhoneNumber] = useState();
+  let [addPhoneNumber,setAddPhoneNumber] = useState();
+  let [address,setAddress] = useState();
+  let [productName,setProductName] = useState();
+  let [description,setDescription] = useState();
+  let [productPrice,setProductPrice] = useState();
+  let [orderDate,setOrderDate] = useState();
+  let [receivingDate,setReceivingDate] = useState();
+  let [payment,setPayment] = useState();
+  
  
-
-  let handleSubmit = async()=>{
    
-    let res = await axios.post(API_URL,{
-    sellerName,
-    sellerCompny,
-    sellerEmail,
-    sellerPhone,
-    sellerAddPhone,
-    productName,
-    productDescription,
-    productPrice,
-    orderDate,
-    deliveryDate,
-    paymentType
-    })
-    navigate("/order")
-  }
-  return <>
-  <div>
-   <Form className='container-fluid purchase_order' >
-   <h3 style={{color:"grey", opacity:"0.2"}}>Purchase Order</h3>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Supplier Name</Form.Label>
-        <Form.Control type="text" placeholder="" value={sellerName} onChange={(e)=>{setSellerName(e.target.value)}} />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Supplier Company</Form.Label>
-        <Form.Control type="text" placeholder="" value={sellerCompny} onChange={(e)=>{setSellerCompny(e.target.value)}} />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="text" placeholder="example@gmail.com" value={sellerEmail} onChange={(e)=>{setSellerEmail(e.target.value)}}/>
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Contact Number</Form.Label>
-        <Form.Control type="text" placeholder="+91 __________" value={sellerPhone} onChange={(e)=>{setSellerPhone(e.target.value)}}/>
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Additional Contact Number</Form.Label>
-        <Form.Control type="text" placeholder="+91 __________" value={sellerAddPhone} onChange={(e)=>{setSellerAddPhone(e.target.value)}} />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Product Name</Form.Label>
-        <Form.Control type="text" placeholder="" value={productName} onChange={(e)=>{setProductName(e.target.value)}}/>
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Product Details</Form.Label>
-        <Form.Control as="textarea" rows={3} value={productDescription} onChange={(e)=>{setProductDescription(e.target.value)}}/>
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Product Price</Form.Label>
-        <Form.Control type="text" placeholder="" value={productPrice} onChange={(e)=>{setProductPrice(e.target.value)}}/>
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Order Date</Form.Label>
-        <Form.Control type="text" placeholder="" value={orderDate} onChange={(e)=>{setOrderDate(e.target.value)}} />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Expected Receiving Date </Form.Label>
-        <Form.Control type="text" placeholder="" value={deliveryDate} onChange={(e)=>{setDeliveryDate(e.target.value)}}/>
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Payment Type  : </Form.Label>&nbsp;&nbsp;
-        <select className='addOrder_option' value={paymentType} onChange={(e)=>{setPaymentType(e.target.value)}}>
-            <option>Paid</option>
-            <option>Pending</option>
-        </select>
-      </Form.Group>
-      <Button variant='success' onClick={()=>{handleSubmit()}}>Submit</Button>
-    </Form>
+  let handleSubmit = async()=>{
+    if(!sellerName||!companyName||!email||!addPhoneNumber||!addPhoneNumber||!address||!productName||
+      !description||!productPrice||!orderDate||!receivingDate||!payment){
+        alert("Please Check & Fill All The Fields")
+      }
+      else{
+        let res = await axios.post(API_URL2,{
+          sellerName,
+          companyName,
+          email,
+          phoneNumber,
+          addPhoneNumber,
+          address,
+          productName,
+          description ,
+          productPrice,
+          orderDate,
+          receivingDate,
+          payment
+          })
+          navigate("/purchase-order")
+      }
     
-  </div>
+  }
+
+  return <>
+  <Link to="/add-purchase-order" style={{textDecoration:"none" , color:"black"}}>
+  <Form className='container-fluid purchase_order'>
+                     <h3 style={{color:"grey", opacity:"0.2"}}>Purchase Order</h3>
+      <Form.Group as={Row} className="mb-3" >
+        <Form.Label column sm="2">Seller Name : </Form.Label>
+        <Col sm="10"> <Form.Control type="text" placeholder="" value={sellerName} onChange={(e)=>{setSellerName(e.target.value)}} /></Col>
+      </Form.Group>
+
+      <Form.Group as={Row} className="mb-3" >
+         <Form.Label column sm="2">Company : </Form.Label>
+        <Col sm="10"> <Form.Control type="text" placeholder="" value={companyName} onChange={(e)=>{setCompanyName(e.target.value)}} /></Col>
+      </Form.Group>
+
+      <Form.Group as={Row} className="mb-3" >
+        <Form.Label column sm="2">Email : </Form.Label>
+        <Col sm="10"><Form.Control type="email" placeholder="" value={email} onChange={(e)=>{setEmail(e.target.value)}}/></Col>
+      </Form.Group>
+
+      <Form.Group as={Row} className="mb-3" >
+        <Form.Label column sm="2"> Phone Number : </Form.Label>
+        <Col sm="10"><Form.Control type="text" placeholder="" value={phoneNumber} onChange={(e)=>{setPhoneNumber(e.target.value)}} /></Col>
+      </Form.Group>
+
+      <Form.Group as={Row} className="mb-3" >
+        <Form.Label column sm="2">Add. Phone Number : </Form.Label>
+        <Col sm="10"><Form.Control type="text" placeholder="" value={addPhoneNumber} onChange={(e)=>{setAddPhoneNumber(e.target.value)}}/></Col>
+      </Form.Group>
+
+      <Form.Group as={Row} className="mb-3" >
+        <Form.Label column sm="2">Address : </Form.Label>
+        <Col sm="10"><Form.Control type="text" placeholder="" value={address} onChange={(e)=>{setAddress(e.target.value)}} /></Col>
+      </Form.Group>
+
+      <Form.Group as={Row} className="mb-3" >
+        <Form.Label column sm="2">Product Name : </Form.Label>
+        <Col sm="10"><Form.Control type="text" placeholder="" value={productName} onChange={(e)=>{setProductName(e.target.value)}} /></Col>
+      </Form.Group>
+
+      <Form.Group as={Row} className="mb-3" >
+        <Form.Label column sm="2">Product Details  : </Form.Label>
+        <Col sm="10"><Form.Control type="text" placeholder="" value={description} onChange={(e)=>{setDescription(e.target.value)}} /></Col>
+      </Form.Group>
+
+      <Form.Group as={Row} className="mb-3" >
+        <Form.Label column sm="2">Product Price : </Form.Label>
+        <Col sm="10"><Form.Control type="text" placeholder="" value={productPrice} onChange={(e)=>{setProductPrice(e.target.value)}} /></Col>
+      </Form.Group>
+
+      <Form.Group as={Row} className="mb-3" >
+        <Form.Label column sm="2">Order Date : </Form.Label>
+        <Col sm="10"><Form.Control type="text" placeholder="" value={orderDate} onChange={(e)=>{setOrderDate(e.target.value)}}/></Col>
+      </Form.Group>
+
+      <Form.Group as={Row} className="mb-3" >
+        <Form.Label column sm="2">Receiving Date : </Form.Label>
+        <Col sm="10"><Form.Control type="text" placeholder="" value={receivingDate} onChange={(e)=>{setReceivingDate(e.target.value)}}/></Col>
+      </Form.Group>
+
+      <Form.Group as={Row} className="mb-3" >
+        <Form.Label column sm="2">Payment Type  :</Form.Label>
+        <Col sm="10">
+        <select className='addOrder_option' onChange={(e)=>{setPayment(e.target.value)}} >
+            <option value="Cash on Delivery">Paid</option>
+            <option value="Online Payment">Pending</option>
+          </select>
+        </Col>
+      </Form.Group>
+     
+
+
+      <Button variant='success' onClick={()=>{handleSubmit()}}>Submit</Button> &nbsp;
+      <Button variant='warning' onClick={()=>{navigate('/purchase-order')}} >Back</Button>
+      
+    </Form> 
+  </Link>
+  
   </>
 }
 

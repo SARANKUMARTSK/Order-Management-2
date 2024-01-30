@@ -324,3 +324,26 @@ font-weight: bolder;
   color: white;
   font-weight: bolder;
  }
+ .outlet{
+  background-color: aqua;
+ }
+
+ .social_media_container{
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  font-size: 50px;  
+
+ }
+ .dashboard{
+  font-weight: bolder;
+  font-size: 30px;
+ }
+ .date{
+  font-style:normal;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  font-size: 25px;
+  color: red;
+  text-shadow: 1px 1px 1px black;
+ }

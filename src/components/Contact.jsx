@@ -1,6 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope ,faPhone} from '@fortawesome/free-solid-svg-icons'
+import { faFacebookSquare, faGithub, faInstagramSquare, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 
 function Contact() {
   return <>
@@ -9,11 +10,11 @@ function Contact() {
     <h6><span><FontAwesomeIcon icon={faEnvelope} /> :</span>  sarankumartsk@gmail.com </h6>
     <h6><span><FontAwesomeIcon icon={faPhone} /> :</span> 8675750594</h6>
    </div>
-   <div className='social_media_container' style={{padding:"10px" , display:"flex" , justifyContent:"center" , gap:"20px" , color:"white !important" , fontSize:"40px"}}>
-    <a href="https://www.linkedin.com/in/saran-kumar-17563a250/" target='blank' rel='noopener noreferrer'><i className="fa-brands fa-linkedin"></i></a>
-    <a href="https://github.com/SARANKUMARTSK"><i className="fa-brands fa-github"></i></a>
-    <a href="https://www.facebook.com/profile.php?id=100009111732920"><i className="fa-brands fa-facebook"></i></a>
-    <a href="https://www.instagram.com/_charan_tsk_/"><i className="fa-brands fa-instagram"></i></a>
+   <div className='social_media_container'  >
+        <a style={{color:"white"}} href="https://github.com/SARANKUMARTSK"><FontAwesomeIcon icon={faGithub} /></a>
+        <a href="https://www.linkedin.com/in/saran-kumar-17563a250/"><FontAwesomeIcon icon={faLinkedinIn}  /></a>
+        <a style={{color:"darkmagenta"}} href="https://www.instagram.com/_charan_tsk_/"><FontAwesomeIcon icon={faInstagramSquare}  /></a>
+        <a href="https://www.facebook.com/profile.php?id=100009111732920"><FontAwesomeIcon icon={faFacebookSquare}  /></a>
    </div>
   </div>
   </>

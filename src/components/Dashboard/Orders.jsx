@@ -32,25 +32,21 @@ function Orders() {
       }
     }
 
-    // let handleEdit = async(order)=>{
-    //   navigate(`/add-order/sales-order`)
-    //   try{
-    //     let res = await axios.get(`${API_URL}/${order.id}`);
-    //     getOrder;
-    //   }catch(error){
-    //     console.log(error);
-    //   }
-    // }
+    // const handleEdit=async(order)=>{
+    //   console.log(order.id);
+    //   navigate('add-sales-order');
+    //   let res = await axios.get(`${API_URL}/${order.id}`);
+    //   getOrder();
+    //  }
+
     
     
   return <>
-  <Link to="/order" style={{textDecoration:"none"}}>
+  <Link  style={{textDecoration:"none"}}>
     <div >
-       <h1 style={{color:"darkgreen" , fontFamily:"fantasy" , textAlign:'center' , textShadow:"1px 1px 1px black"}}> Orders</h1>
+       <h1 style={{color:"darkgreen" , fontFamily:"fantasy" , textAlign:'center' , textShadow:"1px 1px 1px black"}}>Sales Orders</h1>
         <select style={{borderRadius:"10px" , width:"250px", height:"30px", margin:"10px"}}>
         <option value="">All</option>
-          <option value="Sales Order">Sales Order</option>
-          <option value="Purchase Order">Purchase Order</option>
           <option>Invoiced</option>
           <option>Packed</option>
           <option>Shipped</option>
@@ -60,7 +56,7 @@ function Orders() {
         </select>
         <Link style={{padding:"20px"}} to="/home"><Button variant="warning">Go To Home </Button></Link>
         <Link style={{padding:"20px"}} to="/dashboard"><Button variant="success">Go To Dashboard </Button></Link>
-        <Link style={{padding:"20px"}} to="/add-order"><Button variant="info">Add Orders</Button></Link>
+        <Link style={{padding:"20px"}} to="/add-sales-order"><Button variant="info">Add Orders</Button></Link>
      </div>
     
      <Table striped bordered hover>
@@ -106,13 +102,13 @@ function Orders() {
             <th>{e.deliveryDate}</th>
             <th>{e.trackingId}</th>
             <th>
-              <select className='addOrder_option' >
-                <option>Invoiced</option>
-                <option>Packed</option>
-                <option>Shipped</option>
-                <option>Delivered</option>
-                <option>Cancelled</option>
-                <option>Returned</option>
+              <select className='addOrder_option'>
+                <option >Invoiced</option>
+                <option >Packed</option>
+                <option >Shipped</option>
+                <option >Delivered</option>
+                <option >Cancelled</option>
+                <option >Returned</option>
               </select>
             </th>
             <th>

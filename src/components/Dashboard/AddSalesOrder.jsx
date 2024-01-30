@@ -21,7 +21,7 @@ function AddSalesOrder() {
   let [orderDate,setOrderDate] = useState();
   let [deliveryDate,setDeliveryDate] = useState();
   let [deliveryCharge,setDeliveryCharge] = useState();
-  let[paymentType,setPaymentType] = useState();
+  let [paymentType,setPaymentType] = useState();
   let [status , setStatus] = useState();
  
    
@@ -46,11 +46,10 @@ function AddSalesOrder() {
           paymentType,
           status
           })
-          navigate("/order")
+          navigate("/sales-order")
       }
     
   }
-  
   // useEffect(()=>{
   //   let fetchOrderDetails = async()=>{
   //     // console.log(id);
@@ -63,7 +62,7 @@ function AddSalesOrder() {
   //   }
   // })
   return <>
-  <Link  style={{textDecoration:"none" , color:"black"}}>
+  <Link to="/add-sales-order" style={{textDecoration:"none" , color:"black"}}>
   <Form className='container-fluid sales_order'>
                      <h3 style={{color:"grey", opacity:"0.2"}}>Sales Order</h3>
       <Form.Group as={Row} className="mb-3" >
@@ -146,7 +145,8 @@ function AddSalesOrder() {
       </Form.Group>
 
 
-      <Button variant='success' onClick={()=>{handleSubmit()}}>Submit</Button>
+      <Button variant='success' onClick={()=>{handleSubmit()}}>Submit</Button> &nbsp;
+      <Button variant='warning' onClick={()=>{navigate('/sales-order')}} >Back</Button>
 
     </Form> 
   </Link>

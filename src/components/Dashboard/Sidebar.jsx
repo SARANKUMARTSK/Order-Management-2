@@ -27,15 +27,25 @@ function Sidebar() {
                             <i className="fas fa-fw fa-tachometer-alt"></i>
                             <span>Dashboard</span></div>
                     </Link>
-                    <Link to="/order" className="nav-item active" style={{textDecoration:"none"}}>
+                    <Link to="/sales-order" className="nav-item active" style={{textDecoration:"none"}}>
                         <div className="nav-link" >
                             <i className="fas fa-fw fa-cart-shopping"></i>
-                            <span>Orders</span></div>
+                            <span>Sales Orders</span></div>
+                    </Link>
+                    <Link to="/purchase-order" className="nav-item active" style={{textDecoration:"none"}}>
+                        <div className="nav-link" >
+                        <i className="fa-solid fa-magnifying-glass-dollar"></i>
+                            <span>Puchase Orders</span></div>
                     </Link>
                     <Link to="/customer" className="nav-item active" style={{textDecoration:"none"}}>
                         <div className="nav-link" >
                             <i className="fas fa-fw fa-user"></i>
                             <span>Customers</span></div>
+                    </Link>
+                    <Link to="/dealer" className="nav-item active" style={{textDecoration:"none"}}>
+                        <div className="nav-link" >
+                            <i className="fas fa-fw fa-handshake"></i>
+                            <span>Dealers</span></div>
                     </Link>
                     <Link to="/settings" className="nav-item active" style={{textDecoration:"none"}}>
                         <div className="nav-link" >
